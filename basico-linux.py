@@ -184,7 +184,7 @@ def calcu(num1, num2):
 num1 = int(input("Dime el primer numero: "))
 num2 = int(input("Dime el segundo numero: "))
 calcu(num1, num2)
-'''
+
 #-------------Condicionales------------
 #Crea una app que permita la entrada solo a mayores de 18 años en un horario de 5 de la noche a 12 de la mañana y las mujeres pagan la mitad a partir de las 9
 edad = int(input("¿Cual es tu edad?: "))
@@ -199,3 +199,62 @@ def acceso():
         return print("No tienes la edad necesaria para ingresar o el local esta cerrado sorry")
 acceso()
 
+#----------------Diccionarios--------
+lista_compras = {"pan":38, "leche": 26, "jabon": 10}
+print(type(lista_compras))
+#obten el precio de pan y cambialo despues
+print(lista_compras["pan"])
+lista_compras["pan"]= 42
+print(lista_compras)
+#agrega un nuevo producto
+lista_compras["pollo"] = 140
+print(lista_compras)
+#agrega otro elemento y despues borralo
+lista_compras["camara"] = 483
+print(lista_compras)
+del lista_compras["camara"]
+print(lista_compras)
+
+print(abs(5.7))
+
+#-------------Bucles for-------
+#se usan cuando sabemos cuantas vueltas o ciclos se haran
+#crea una funcion que devuelva una lista de 0-100 y que solo sean numeros pares
+
+def lista():
+    for i in range(0, 102, 2):
+        print(i)
+lista()
+
+#---------ciclos sobre elementos iterables------
+carreras = ["Enfermeria", "Nutricion", "Sistemas", "Medicina"]
+for c in carreras:
+    print(c)
+
+#itera sobre un diccionario primero su clave y luego el valor
+peliculas = {"Terror": "IT", "Accion": "Top Gun", "Drama": "Joker"}
+for clave in peliculas:
+    print(clave)
+
+for valor in peliculas.values():
+    print(valor)
+
+#itera la clave y valor al mismo tiempo 
+for clave, valor in peliculas.items():
+    print(clave, valor)
+    
+'''
+#-----------while-------
+#crea una funcion que devuelva los numeros introducidos por 2 usuarios diferentes e iteralos de 3 en 3 
+
+def ciclo():
+    uno = int(input("Dame un numero: "))
+    dos = int(input("Dame otro numero: "))
+    while uno < dos:
+        print(uno)
+        uno += 3
+        if uno == 25:
+            continue
+
+ciclo()
+# crtl + c sirve para cortar un buble infinito
