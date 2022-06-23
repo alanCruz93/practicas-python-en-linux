@@ -243,7 +243,7 @@ for valor in peliculas.values():
 for clave, valor in peliculas.items():
     print(clave, valor)
     
-'''
+
 #-----------while-------
 #crea una funcion que devuelva los numeros introducidos por 2 usuarios diferentes e iteralos de 3 en 3 
 
@@ -258,3 +258,9 @@ def ciclo():
 
 ciclo()
 # crtl + c sirve para cortar un buble infinito
+'''
+a = 0
+b = 100
+while a <= b:
+    print(a)
+    a += 5
