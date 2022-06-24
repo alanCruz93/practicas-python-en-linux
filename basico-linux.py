@@ -258,9 +258,47 @@ def ciclo():
 
 ciclo()
 # crtl + c sirve para cortar un buble infinito
+
+#Crea una funcion con variables locales
+def registro(nombre, apellido, edad):
+    nombre = input("Dime tu nombre: ")
+    apellido = input("Dime tu apellido: ")
+    edad = int(input("¿Cual es tu edad?: "))
+    return "El cliente "+ nombre + " " +apellido+ " a sido aceptado a la edad de "+ str(edad) +" años."
+alan = registro("nombre", "apellido", "edad")
+print(alan)
+
+#Serie fibonacci
+def fibonacci(n):
+    if n == 0 or n == 1:
+        return n
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+print(fibonacci(7))
+
+#--------------Archivos----------
+with open("texto-prueba.txt", "r") as archivo:
+    for linea in archivo:
+        print("-----Linea-----")
+        print(linea)
 '''
-a = 0
-b = 100
-while a <= b:
-    print(a)
-    a += 5
+#para remplazar el texto completo de un archo usar w y despues el metodo .write
+remplazo = {
+    "alan": 100,
+    "veronica": 44,
+    "sofia" : 89
+}
+with open("archivo.txt", "w") as file:
+    for nombre,calif in remplazo.items():
+        file.write(nombre + " : "+ str(calif) + " \n")
+#Agrega al archivo 3 claves y valor nuevas con a y luego write
+
+agregar = {
+    "eddy" : 35,
+    "carolina" : 60,
+    "Karla" : 95
+}
+with open("archivo.txt", "a") as file:
+    for clave, valor in agregar.items():
+        file.write(clave + " : "+ str(valor) + " \n")

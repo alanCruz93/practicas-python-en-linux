@@ -1,0 +1,6 @@
+alan : 100 
+veronica : 44 
+sofia : 89 
+eddy : 35 
+carolina : 60 
+Karla : 95 
