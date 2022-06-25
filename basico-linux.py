@@ -282,7 +282,7 @@ with open("texto-prueba.txt", "r") as archivo:
     for linea in archivo:
         print("-----Linea-----")
         print(linea)
-'''
+
 #para remplazar el texto completo de un archo usar w y despues el metodo .write
 remplazo = {
     "alan": 100,
@@ -302,3 +302,57 @@ agregar = {
 with open("archivo.txt", "a") as file:
     for clave, valor in agregar.items():
         file.write(clave + " : "+ str(valor) + " \n")
+
+#----------------importaciones--------
+#importa la funcion raiz cuadrada desde el archivo modulo1
+import modulo1
+print(modulo1.exportar)
+
+print(modulo1.raiz(50))
+aqui = modulo1.raiz(80)
+print(aqui)
+
+#---------Errores y try except
+
+primero = int(input("Dame un numero: "))
+segundo = int(input("Dame otro numero: "))
+try:
+    print(primero/segundo)
+except ZeroDivisionError:
+    print("Tienes que ingresar solo numeros del 1-100")
+#puede llevar else y al final una finally
+finally:
+    print("Esta clausula se ejecuta si o si ")
+'''
+
+#--------------POO-----------------
+class MiCuenta:
+    def __init__(self, nombre, num_cuenta, balance):
+        self.nombre = nombre
+        self.num_cuenta = num_cuenta
+        self.balance = balance
+    
+    def mi_balance(self):
+        print("Querido socio su balance es de: "+ str(self.balance))
+    
+    def datos_completos(self):
+        print("Querido socio: "+ self.nombre+ " con numero de cuenta: "+ self.num_cuenta+ " tiene un balance de: " + str(self.balance))
+
+    def deposito(self, monto):
+        if self.balance > 0:
+            self.balance -= monto
+            print("Haz realizado un deposito de: "+ str(monto)+ " tu balance ahora es de: "+ str(self.balance))
+        else:
+            print("No cuentas con el saldo suficiente")
+
+    def retiro(self, monto):
+        self.balance -= monto
+        print("Haz retirado de tu cuenta: "+ str(monto)+ " tu saldo actual es de: "+ str(self.balance))
+
+
+cuenta_alan = MiCuenta("Alan Hernandez","4360-2257-3175", 8000)
+cuenta_alan.mi_balance()
+cuenta_alan.datos_completos()
+cuenta_vero = MiCuenta("Veronica Rodriguez", "4475-1209-6300", 15000)
+cuenta_vero.deposito(4000)
+cuenta_vero.retiro(2750)
