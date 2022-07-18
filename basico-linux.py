@@ -356,3 +356,43 @@ cuenta_alan.datos_completos()
 cuenta_vero = MiCuenta("Veronica Rodriguez", "4475-1209-6300", 15000)
 cuenta_vero.deposito(4000)
 cuenta_vero.retiro(2750)
+
+class tarjeta:
+    def __init__(self, saldo, comprar, recargar):
+        self.saldo= saldo
+        self.comprar= comprar
+        self.recargar= recargar
+
+    def consulta(self, saldo):
+        tarjeta = input("Ha introducido su tarjeta responda y/n: ")
+        if tarjeta == "y":
+            print("--------CARGANDO-------")
+            if saldo > 0 and saldo <= 10000:
+                print(f"Tienes un saldo de: {saldo} puedes tener el credito basico.")
+            elif saldo >10000 and saldo <= 20000:
+                print(f"Tienes un saldo de: {saldo} puedes tener el credito golden.")
+            elif saldo > 20000 and saldo <= 80000:
+                print(f"Tienes un saldo de: {saldo} puedes tener el credito luxury.")
+            else:
+                print(f"Tienes un saldo de: {saldo} no contamos con creditos para tu saldo actual.")
+            print("Retire su tarjeta.")
+            print("Vuelva pronto.")
+        
+        elif tarjeta == "n":
+            print("Puede comprar una tarjeta nueva aqui")
+            print("Vuelva pronto") 
+    
+    def recarga(self, saldo):
+        print("------CARGANDO-----")
+        print(f"Querido usuario usted tiene en saldo de: {saldo}")
+        recargar= int(input("Introduzca la cantidad que quiere recargar: "))
+        print("------PROCESANDO------")
+        saldo += recargar
+        print(f"Usted a recargado la cantidad de: {recargar} su saldo al momento es de: {saldo}")
+        print("Gracias por confiar en nosotros vuelva pronto")
+        print("Retire su tarjeta")
+        
+        
+mia = tarjeta(8585, "no", 2000)
+mia.recarga(15000)
+print(mia)

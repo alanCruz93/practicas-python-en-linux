@@ -14,15 +14,38 @@ for num in mi_set:
 
 set2 = {0,1,2,3,4,5}
 set3 = {4,5,6,7,8}
+#--------UNION-------
 # une los sets
 union = set2.union(set3)
 print(union)
+#otra forma de hacer uniones
+union__dos ={"perro","gato","pato"} | {"caballo","gato"}
+print(union__dos)
+
+#------Intersecciones de sets-----------
 #encuentra la interseccion entre 2 sets
 interseccion = set2.intersection(set3)
 print(interseccion)
+
+#Otra forma de hacer una interseccion
+conj__a = {3,6,8,3,5,6,7}
+conj__b = {6,3,8,7,0,2,1}
+interseecion= conj__a & conj__b
+print(interseecion)
+
+#-------Diferencia---------
 #encuentra la diferencia entre los 2 sets
 difer = set2.difference(set3)
 print(difer)
+#otra forma de hacer diferencia
+diferencia = {3,6,7,0,11,42} - {3,6,7,11}
+print(diferencia)
+
+#--------Diferencia simetrica----- son elementos que estan en el primer conjunto y no en el segundo y alreves
+simetrica1 = {11,65,22}
+simetrica2={11,4,77}
+simetricaRes= simetrica1.symmetric_difference(simetrica2)
+print(simetricaRes)
 
 #si se quisieran actualizar los sets usar update, difference_update, interseccion_update
 #saber si son subconjuntos todos los elementos del primer set tienen que estar en el segundo para ser true
@@ -31,14 +54,21 @@ quinto = {10,20}
 print(cuatro.issubset(quinto))#false
 print(quinto.issubset(cuatro))#true
 
-#superset devuelve true si el primer set contiene todos los elementos del segundo
+#superset devuelve true si el primer set contiene todos los elementos del segundo cuando un conjunto contiene a otro
 print(cuatro.issuperset(quinto))
+#otro ejemplo
+superSet= {1,2,3,4,5}.issuperset({1,2,3,4,5,6})
+print(superSet)
+
 #si no tiene elementos de interseccion
 sexto = {50,60}
 septimo = {70,80}
 print(sexto.isdisjoint(septimo))
+#otro ejemplo
+sinInter= {1,2,3,4,5}.isdisjoint({6,7,8,9})
+print(sinInter)#true
 
-#un frozenset es inmutable
+#tipo 2 de sets un frozenset es inmutable
 frio = frozenset([1,2,3,4])
 print(frio)
 
@@ -107,7 +137,7 @@ print(contadas.most_common(2))
 #convertir contador en lista   
 contad_lista = list(contadas.elements()) #se tiene que convertir a una lista primero
 print(contad_lista)
-"""
+
 #namedtuple
 from collections import namedtuple
 punto = namedtuple('point', 'x,y')
@@ -123,3 +153,7 @@ libreria = {
 }
 ordenada = OrderedDict(libreria)
 print(ordenada)
+
+
+from click import prompt
+"""

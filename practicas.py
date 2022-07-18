@@ -1,3 +1,4 @@
+"""
 #--------Adivina el numero--------
 import random
 def adivina(n):
@@ -30,3 +31,5 @@ def adivina(n):
         intento += 1
 
 adivina(100)
+"""
+
